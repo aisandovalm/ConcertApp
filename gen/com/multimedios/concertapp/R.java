@@ -553,7 +553,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class id {
         public static final int action_settings=0x7f040023;
         public static final int bottom=0x7f040003;
-        public static final int btn_login_facebook=0x7f04000a;
         public static final int com_facebook_login_activity_progress_bar=0x7f040010;
         public static final int com_facebook_picker_activity_circle=0x7f04000f;
         public static final int com_facebook_picker_checkbox=0x7f040012;
@@ -576,6 +575,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040021;
         public static final int indicator=0x7f04000b;
         public static final int large=0x7f040007;
+        public static final int login_button=0x7f04000a;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040006;
         public static final int pager=0x7f04000c;
@@ -617,9 +617,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class menu {
         public static final int home=0x7f0b0000;
-        public static final int main=0x7f0b0001;
-        public static final int pager_main=0x7f0b0002;
-        public static final int procesando=0x7f0b0003;
+        public static final int ingresar_usando_facebook=0x7f0b0001;
+        public static final int main=0x7f0b0002;
+        public static final int pager_main=0x7f0b0003;
+        public static final int procesando=0x7f0b0004;
     }
     public static final class string {
         public static final int action_settings=0x7f0a001a;
@@ -652,9 +653,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f0a000a;
         public static final int hello_world=0x7f0a001b;
         public static final int login_facebook=0x7f0a001e;
-        public static final int title_activity_home=0x7f0a001f;
-        public static final int title_activity_pager_main=0x7f0a0021;
-        public static final int title_activity_procesando=0x7f0a0020;
+        public static final int logout_facebook=0x7f0a001f;
+        public static final int title_activity_home=0x7f0a0020;
+        public static final int title_activity_pager_main=0x7f0a0022;
+        public static final int title_activity_procesando=0x7f0a0021;
         public static final int welcome_message=0x7f0a001d;
     }
     public static final class style {
