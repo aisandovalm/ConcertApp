@@ -10,13 +10,13 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/bienvenida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
-        android:text="@string/welcome_message" />
+        android:text="@string/mensaje_bienvenida" />
 
     <com.facebook.widget.LoginButton
         android:id="@+id/login_button"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        fb:login_text="@string/login_facebook"
-       	fb:logout_text="@string/logout_facebook" />
+        fb:login_text="Entrar con Facebook"
+       	fb:logout_text="Salir" /> />
 
 </RelativeLayout>

@@ -21,7 +21,7 @@ public class HomeActivity extends Activity {
 		}
 		
 		welcome = (TextView) findViewById(R.id.txt_home_activity);
-		welcome.setText(getString(R.string.welcome_message) + " " + usuario + "!");
+		welcome.setText(getString(R.string.mensaje_bienvenida) + " " + usuario + "!");
 	}
 
 	@Override
