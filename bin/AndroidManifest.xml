@@ -15,7 +15,7 @@
         android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.multimedios.concertapp.MainActivity"
             android:label="@string/app_name" >
@@ -43,5 +43,9 @@
         </activity>
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
     </application>
-
+    <application android:name=".Global"
+       	android:label="@string/app_name"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher">
+    </application>
 </manifest>

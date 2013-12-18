@@ -16,12 +16,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
 
+import com.multimedios.concertapp.global.*;
+
 public class MainActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		final Global global = Global.getInstance();
 		
 		final TextView txtBienvenida = (TextView)findViewById(R.id.bienvenida);
 		
@@ -40,13 +44,17 @@ public class MainActivity extends Activity {
 						public void onCompleted(GraphUser user, Response response) {
 							// TODO Auto-generated method stub
 							if(user != null){
-								/*Intent irHomeActivity = new Intent(getApplicationContext(), HomeActivity.class);
+								global.set_nombre(user.getName());
+								//Se modifica el texto de bienvenida, con el nombre de usuario
+								txtBienvenida.setText(getString(R.string.mensaje_bienvenida) + " " + user.getName());
+								
+								Intent irHomeActivity = new Intent(getApplicationContext(), HomeActivity.class);
 						    	irHomeActivity.putExtra("usuario", user.getName());
-						    	startActivity(irHomeActivity);*/
+						    	startActivity(irHomeActivity);
 								//Intent irPagerMainActivity = new Intent(getApplicationContext(), PagerMainActivity.class);
 						    	//startActivity(irPagerMainActivity);
 						    	//finish();
-								txtBienvenida.setText(getString(R.string.mensaje_bienvenida) + " " + user.getName());
+								
 							}
 							else{
 								txtBienvenida.setText("Sin usuario");
