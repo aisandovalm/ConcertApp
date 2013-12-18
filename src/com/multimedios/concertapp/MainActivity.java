@@ -48,11 +48,11 @@ public class MainActivity extends Activity {
 								//Se modifica el texto de bienvenida, con el nombre de usuario
 								txtBienvenida.setText(getString(R.string.mensaje_bienvenida) + " " + user.getName());
 								
-								Intent irHomeActivity = new Intent(getApplicationContext(), HomeActivity.class);
+								/*Intent irHomeActivity = new Intent(getApplicationContext(), HomeActivity.class);
 						    	irHomeActivity.putExtra("usuario", user.getName());
-						    	startActivity(irHomeActivity);
-								//Intent irPagerMainActivity = new Intent(getApplicationContext(), PagerMainActivity.class);
-						    	//startActivity(irPagerMainActivity);
+						    	startActivity(irHomeActivity);*/
+								Intent irPagerMainActivity = new Intent(getApplicationContext(), PagerMainActivity.class);
+						    	startActivity(irPagerMainActivity);
 						    	//finish();
 								
 							}
