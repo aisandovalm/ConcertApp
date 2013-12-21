@@ -1,18 +1,13 @@
 package com.multimedios.concertapp;
 
-import java.util.Arrays;
-
 import com.facebook.Request;
 import com.facebook.Response;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
-import com.facebook.widget.LoginButton.OnErrorListener;
-
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
 

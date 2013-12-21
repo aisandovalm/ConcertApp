@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Concert App</string>
+    <string name="app_name">ConcertApp</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="app_id">677905142229548</string>
     <string name="mensaje_bienvenida">Bienvenido a Concert App</string>
     <string name="login_facebook">Login con Facebook</string>
     <string name="logout_facebook">Logout</string>
-    <string name="title_activity_home">HomeActivity</string>
-    <string name="title_activity_procesando">ProcesandoActivity</string>
-    <string name="title_activity_pager_main">PagerMainActivity</string>
+    <string name="title_activity_home">ConcertApp</string>
+    <string name="title_activity_procesando">ConcertApp</string>
+    <string name="title_activity_pager_main">ConcertApp</string>
+    <string name="page_url">http://api.songkick.com/api/3.0/events.json?location=ip:200.1.20.254&amp;apikey=5EefFkCuDdgdVZXy</string>
 
 </resources>

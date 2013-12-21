@@ -48,13 +48,13 @@ public class FragmentAdapter extends FragmentPagerAdapter implements IconPagerAd
         String title = "";
         switch(position){
         case 0:
-            title = "First Fragment";
+            title = "Todos los eventos";
             break;
         case 1:
-            title = "Second Fragment";
+            title = "Por fecha";
             break;
         case 2:
-            title = "Third  Fragment";
+            title = "Por artista";
             break;
         }
         return title;

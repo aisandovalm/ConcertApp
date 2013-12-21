@@ -11,21 +11,18 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         super(fm);
     }
  
-    public CharSequence getPageTitle(int position) {
- 
+    @Override
+	public CharSequence getPageTitle(int position) {
         return titles[position];
     }
  
     @Override
     public Fragment getItem(int position) {
- 
-        //return new MyFragment();
     	return new Fragment();
     }
  
     @Override
     public int getCount() {
- 
         return titles.length;
     }
  

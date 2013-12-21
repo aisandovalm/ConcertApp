@@ -9,7 +9,8 @@ import android.view.ViewGroup;
 
 public class FirstFragment extends Fragment {
     
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    @Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.lin, null);
         return v;
         
