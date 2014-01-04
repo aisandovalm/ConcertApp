@@ -38,7 +38,7 @@ public class FragmentAdapter extends FragmentPagerAdapter implements IconPagerAd
     }
 
     @Override
-    public int getCount() {//cúantos fragments habrán
+    public int getCount() {//cúantos fragments hay
         // TODO Auto-generated method stub
         return 3;//Hay 3 fragments (lin, lin2, lin3)
     }

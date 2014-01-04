@@ -557,13 +557,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int vpi__tab_unselected_pressed_holo=0x7f020029;
     }
     public static final class id {
-        public static final int action_settings=0x7f04002f;
+        public static final int action_settings=0x7f040030;
         public static final int bienvenida=0x7f040009;
         public static final int billing=0x7f040027;
         public static final int billingIndex=0x7f040025;
         public static final int bottom=0x7f040006;
-        public static final int button1=0x7f040029;
-        public static final int button2=0x7f04002a;
+        public static final int button1=0x7f04002a;
+        public static final int button2=0x7f04002b;
         public static final int com_facebook_login_activity_progress_bar=0x7f040010;
         public static final int com_facebook_picker_activity_circle=0x7f04000f;
         public static final int com_facebook_picker_checkbox=0x7f040012;
@@ -585,19 +585,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f040020;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040021;
         public static final int displayName=0x7f040026;
-        public static final int hPBarLayout=0x7f04002c;
+        public static final int hPBarLayout=0x7f04002d;
         public static final int id=0x7f040028;
         public static final int indicator=0x7f04000b;
         public static final int large=0x7f040002;
-        public static final int legacy_navigation_progressBar=0x7f04002d;
-        public static final int listView3=0x7f04002e;
+        public static final int legacy_navigation_progressBar=0x7f04002e;
+        public static final int listView3=0x7f04002f;
+        public static final int list_firstFragment=0x7f040029;
         public static final int login_button=0x7f04000a;
         public static final int none=0x7f040003;
         public static final int normal=0x7f040001;
         public static final int pager=0x7f04000c;
         public static final int picker_subtitle=0x7f04001d;
         public static final int progressBar_procesando=0x7f04000d;
-        public static final int radioButton1=0x7f04002b;
+        public static final int radioButton1=0x7f04002c;
         public static final int small=0x7f040000;
         public static final int storelistItemLayout=0x7f040023;
         public static final int storelistSubItemLayout=0x7f040024;
