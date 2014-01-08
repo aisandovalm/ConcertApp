@@ -6,8 +6,11 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -62,6 +65,13 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
+	
+	@Override
+	  public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.main, menu);
+	    return true;
+	  } 
 	
 	@Override
    public void onActivityResult(int requestCode, int resultCode, Intent data) {

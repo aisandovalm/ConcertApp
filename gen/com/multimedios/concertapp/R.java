@@ -530,7 +530,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_list_section_header_background=0x7f02000f;
         public static final int com_facebook_loginbutton_silver=0x7f020010;
         public static final int com_facebook_logo=0x7f020011;
-        public static final int com_facebook_picker_default_separator_color=0x7f02002a;
+        public static final int com_facebook_picker_default_separator_color=0x7f02002c;
         public static final int com_facebook_picker_item_background=0x7f020012;
         public static final int com_facebook_picker_list_focused=0x7f020013;
         public static final int com_facebook_picker_list_longpressed=0x7f020014;
@@ -547,16 +547,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_top_background=0x7f02001f;
         public static final int com_facebook_top_button=0x7f020020;
         public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020021;
-        public static final int ic_launcher=0x7f020022;
-        public static final int vpi__tab_indicator=0x7f020023;
-        public static final int vpi__tab_selected_focused_holo=0x7f020024;
-        public static final int vpi__tab_selected_holo=0x7f020025;
-        public static final int vpi__tab_selected_pressed_holo=0x7f020026;
-        public static final int vpi__tab_unselected_focused_holo=0x7f020027;
-        public static final int vpi__tab_unselected_holo=0x7f020028;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f020029;
+        public static final int ic_action_remove=0x7f020022;
+        public static final int ic_action_search=0x7f020023;
+        public static final int ic_launcher=0x7f020024;
+        public static final int vpi__tab_indicator=0x7f020025;
+        public static final int vpi__tab_selected_focused_holo=0x7f020026;
+        public static final int vpi__tab_selected_holo=0x7f020027;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020028;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020029;
+        public static final int vpi__tab_unselected_holo=0x7f02002a;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f02002b;
     }
     public static final class id {
+        public static final int action_logout=0x7f040032;
+        public static final int action_search=0x7f040031;
         public static final int action_settings=0x7f040030;
         public static final int bienvenida=0x7f040009;
         public static final int billing=0x7f040027;
@@ -647,9 +651,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int procesando=0x7f0b0004;
     }
     public static final class string {
+        public static final int action_search=0x7f070025;
         public static final int action_settings=0x7f07001a;
         public static final int app_id=0x7f07001c;
         public static final int app_name=0x7f070019;
+        public static final int cerrar_sesion=0x7f070024;
         public static final int com_facebook_choose_friends=0x7f07000f;
         public static final int com_facebook_dialogloginactivity_ok_button=0x7f070000;
         public static final int com_facebook_internet_permission_error_message=0x7f070013;

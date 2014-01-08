@@ -12,5 +12,6 @@
     <string name="title_activity_procesando">ConcertApp</string>
     <string name="title_activity_pager_main">ConcertApp</string>
     <string name="page_url">http://api.songkick.com/api/3.0/events.json?location=ip:200.1.20.254&amp;apikey=5EefFkCuDdgdVZXy</string>
-
+	<string name="cerrar_sesion">Cerrar Sesión</string>
+	<string name="action_search">Buscar</string>
 </resources>
