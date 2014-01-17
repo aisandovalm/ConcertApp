@@ -2,9 +2,12 @@ package com.multimedios.concertapp.adapters;
 
 import java.util.List;
 
-
+//import com.fasterxml.jackson.annotation.JsonProperty;
 import com.multimedios.concertapp.R;
-import com.multimedios.concertapp.models.PerformanceModel;
+import com.multimedios.concertapp.models.*;
+
+//import cl.telematica.httpjacksonparseexample.R;
+//import cl.telematica.httpjacksonparseexample.models.LastfmEventModel;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,13 +16,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class RssAdapter extends ArrayAdapter<PerformanceModel> {
+public class RssAdapter extends ArrayAdapter<LastfmEventModel> {
 	
 	LayoutInflater mInflater;
 	int mCount;
 
 	public RssAdapter(Context context, int textViewResourceId,
-			List<PerformanceModel> objects) {
+			List<LastfmEventModel> objects) {
 		super(context, textViewResourceId, objects);
 		mInflater = LayoutInflater.from(context);
 		mCount = objects.size();
@@ -28,14 +31,13 @@ public class RssAdapter extends ArrayAdapter<PerformanceModel> {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 
 		ViewHolder holder = null;
-		TextView billingIndex = null;
-		TextView displayName = null;
-//		TextView artist = null;
-	    TextView billing = null;
-	    TextView id = null;
+		//TextView id = null;
+		TextView title = null;
+		TextView headliner = null;
+	    TextView startDate = null;
+	    TextView venueName = null;
 	    
-	//	final EarthQuakeDataModel model = (EarthQuakeDataModel) getItem(position);
-		final PerformanceModel model = (PerformanceModel) getItem(position);
+		final LastfmEventModel event = (LastfmEventModel) getItem(position);
 		
 		if(convertView == null){
 	         convertView = mInflater.inflate(R.layout.data_item_details, null);
@@ -45,18 +47,18 @@ public class RssAdapter extends ArrayAdapter<PerformanceModel> {
 	    	holder = (ViewHolder) convertView.getTag();
 	    }
 //obtener datos	
-		billingIndex = holder.getBillingIndex();
-		displayName = holder.getDisplayName();
-	//	artist = holder.getLocationText();
-		billing = holder.getBilling();
-		id = holder.getId();
+	//	id = holder.getId();
+		title = holder.getTitle();
+		headliner = holder.getHeadliner();
+		startDate = holder.getStartDate();
+		venueName = holder.getVenueName();
 
 //setearlos para mostrar
-		billingIndex.setText(String.valueOf(model.billingIndex));
-		displayName.setText(model.displayName);
-	//	artist.setText(model.artist);
-		billing.setText(model.billing);
-		id.setText(String.valueOf(model.id));
+	//	id.setText(String.valueOf( model.id ));
+		title.setText(event.title);
+		headliner.setText(event.artists.headliner);
+		startDate.setText(event.startDate );
+		venueName.setText(event.venue.name );
 		
 		return convertView;
 	}
@@ -68,41 +70,41 @@ public class RssAdapter extends ArrayAdapter<PerformanceModel> {
 	
 	private class ViewHolder {
 	    private View mRow;
-	    private TextView billingIndex;
-	    private TextView displayName;
-	    private TextView billing;
-	    private TextView id;
+	    private TextView title;
+	    private TextView headliner;
+	    private TextView startDate;
+	    private TextView venueName;
 	    
 	    public ViewHolder(View row) {
 	          mRow = row;
 	    }
 	    
-	    public TextView getBillingIndex(){
-	    	if(billingIndex == null){
-	    		billingIndex = (TextView) mRow.findViewById(R.id.billingIndex);
+	    public TextView getHeadliner(){
+	    	if(headliner == null){
+	    		headliner = (TextView) mRow.findViewById(R.id.headliner);
 	    	}
-	    	return billingIndex;
+	    	return headliner;
 	    }
 	    
-	    public TextView getDisplayName(){
-	    	if(displayName == null){
-	    		displayName = (TextView) mRow.findViewById(R.id.displayName);
+	    public TextView getTitle(){
+	    	if(title == null){
+	    		title = (TextView) mRow.findViewById(R.id.title);
 	    	}
-	    	return displayName;
+	    	return title;
 	    }	    
 	    
-	    public TextView getBilling(){
-	    	if(billing == null){
-	    		billing = (TextView) mRow.findViewById(R.id.billing );
+	    public TextView getStartDate(){
+	    	if(startDate == null){
+	    		startDate = (TextView) mRow.findViewById(R.id.startDate );
 	    	}
-	    	return billing;
+	    	return startDate;
 	    }
 	    
-	    public TextView getId(){
-	    	if(id == null){
-	    		id = (TextView) mRow.findViewById(R.id.id);
+	    public TextView getVenueName(){
+	    	if(venueName == null){
+	    		venueName = (TextView) mRow.findViewById(R.id.venueName);
 	    	}
-	    	return id;
+	    	return venueName;
 	    }
 	    
 	}

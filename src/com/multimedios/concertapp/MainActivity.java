@@ -9,12 +9,10 @@ import com.facebook.widget.LoginButton;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuInflater;
+//import android.view.Menu;
+//import android.view.MenuInflater;
 import android.widget.TextView;
 import android.content.Intent;
-
-import com.multimedios.concertapp.global.*;
 
 public class MainActivity extends Activity {
 	
@@ -23,7 +21,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		final Global global = Global.getInstance();
+		//final Global global = Global.getInstance();
 		
 		final TextView txtBienvenida = (TextView)findViewById(R.id.bienvenida);
 		
@@ -42,7 +40,6 @@ public class MainActivity extends Activity {
 						public void onCompleted(GraphUser user, Response response) {
 							// TODO Auto-generated method stub
 							if(user != null){
-								global.set_nombre(user.getName());
 								//Se modifica el texto de bienvenida, con el nombre de usuario
 								txtBienvenida.setText(getString(R.string.mensaje_bienvenida) + " " + user.getName());
 								
@@ -51,7 +48,7 @@ public class MainActivity extends Activity {
 						    	startActivity(irHomeActivity);*/
 								Intent irPagerMainActivity = new Intent(getApplicationContext(), PagerMainActivity.class);
 						    	startActivity(irPagerMainActivity);
-						    	//finish();
+						    	finish();
 								
 							}
 							else{
@@ -66,12 +63,12 @@ public class MainActivity extends Activity {
 		});
 	}
 	
-	@Override
+	/*@Override
 	  public boolean onCreateOptionsMenu(Menu menu) {
 	    MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.main, menu);
 	    return true;
-	  } 
+	  } */
 	
 	@Override
    public void onActivityResult(int requestCode, int resultCode, Intent data) {

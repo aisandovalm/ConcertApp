@@ -1,12 +1,22 @@
 package com.multimedios.concertapp;
 
+//import android.app.Activity;
+//import android.app.ActivityOptions;
+//import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+
 import com.viewpagerindicator.PageIndicator;
 import com.viewpagerindicator.TitlePageIndicator;
 import com.multimedios.concertapp.fragments.FragmentAdapter;
+import com.facebook.Session;
+//import com.facebook.model.GraphUser;
+//import com.facebook.widget.LoginButton;
 
 public class PagerMainActivity extends FragmentActivity {
 	
@@ -30,10 +40,35 @@ public class PagerMainActivity extends FragmentActivity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.pager_main, menu);
-		return true;
+	  public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.main, menu);
+	    return true;
+	  } 
+	
+	@Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.action_search:
+	      Toast.makeText(this, "Búsqueda", Toast.LENGTH_SHORT)
+	          .show();
+	      break;
+	    case R.id.action_logout:
+	      Toast.makeText(this, "Cerrando sesión", Toast.LENGTH_SHORT)
+	          .show();
+	      salirFacebook();
+	      this.finish();
+	      break;
+
+	    default:
+	      break;
+	    }
+
+	    return true;
+	  } 
+	
+	public static void salirFacebook(){
+		Session.getActiveSession().closeAndClearTokenInformation();
 	}
 }
 

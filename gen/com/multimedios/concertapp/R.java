@@ -530,7 +530,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_list_section_header_background=0x7f02000f;
         public static final int com_facebook_loginbutton_silver=0x7f020010;
         public static final int com_facebook_logo=0x7f020011;
-        public static final int com_facebook_picker_default_separator_color=0x7f02002c;
+        public static final int com_facebook_picker_default_separator_color=0x7f02002d;
         public static final int com_facebook_picker_item_background=0x7f020012;
         public static final int com_facebook_picker_list_focused=0x7f020013;
         public static final int com_facebook_picker_list_longpressed=0x7f020014;
@@ -547,24 +547,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_top_background=0x7f02001f;
         public static final int com_facebook_top_button=0x7f020020;
         public static final int com_facebook_usersettingsfragment_background_gradient=0x7f020021;
-        public static final int ic_action_remove=0x7f020022;
-        public static final int ic_action_search=0x7f020023;
-        public static final int ic_launcher=0x7f020024;
-        public static final int vpi__tab_indicator=0x7f020025;
-        public static final int vpi__tab_selected_focused_holo=0x7f020026;
-        public static final int vpi__tab_selected_holo=0x7f020027;
-        public static final int vpi__tab_selected_pressed_holo=0x7f020028;
-        public static final int vpi__tab_unselected_focused_holo=0x7f020029;
-        public static final int vpi__tab_unselected_holo=0x7f02002a;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f02002b;
+        public static final int fb_logo=0x7f020022;
+        public static final int ic_action_remove=0x7f020023;
+        public static final int ic_action_search=0x7f020024;
+        public static final int ic_launcher=0x7f020025;
+        public static final int vpi__tab_indicator=0x7f020026;
+        public static final int vpi__tab_selected_focused_holo=0x7f020027;
+        public static final int vpi__tab_selected_holo=0x7f020028;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020029;
+        public static final int vpi__tab_unselected_focused_holo=0x7f02002a;
+        public static final int vpi__tab_unselected_holo=0x7f02002b;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f02002c;
     }
     public static final class id {
         public static final int action_logout=0x7f040032;
         public static final int action_search=0x7f040031;
         public static final int action_settings=0x7f040030;
         public static final int bienvenida=0x7f040009;
-        public static final int billing=0x7f040027;
-        public static final int billingIndex=0x7f040025;
         public static final int bottom=0x7f040006;
         public static final int button1=0x7f04002a;
         public static final int button2=0x7f04002b;
@@ -588,9 +587,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_usersettingsfragment_login_button=0x7f040022;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f040020;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040021;
-        public static final int displayName=0x7f040026;
         public static final int hPBarLayout=0x7f04002d;
-        public static final int id=0x7f040028;
+        public static final int headliner=0x7f040026;
         public static final int indicator=0x7f04000b;
         public static final int large=0x7f040002;
         public static final int legacy_navigation_progressBar=0x7f04002e;
@@ -604,12 +602,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int progressBar_procesando=0x7f04000d;
         public static final int radioButton1=0x7f04002c;
         public static final int small=0x7f040000;
+        public static final int startDate=0x7f040027;
         public static final int storelistItemLayout=0x7f040023;
         public static final int storelistSubItemLayout=0x7f040024;
+        public static final int title=0x7f040025;
         public static final int top=0x7f040007;
         public static final int triangle=0x7f040004;
         public static final int txt_home_activity=0x7f040008;
         public static final int underline=0x7f040005;
+        public static final int venueName=0x7f040028;
     }
     public static final class integer {
         public static final int default_circle_indicator_orientation=0x7f0a0000;
@@ -681,6 +682,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int com_facebook_usersettingsfragment_log_in_button=0x7f070008;
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f070009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
+        public static final int geo_url=0x7f070026;
         public static final int hello_world=0x7f07001b;
         public static final int login_facebook=0x7f07001e;
         public static final int logout_facebook=0x7f07001f;

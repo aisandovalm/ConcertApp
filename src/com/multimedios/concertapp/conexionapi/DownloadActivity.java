@@ -7,12 +7,14 @@ import java.util.List;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import com.multimedios.concertapp.BuildConfig;
+import com.multimedios.concertapp.R;
 import com.multimedios.concertapp.adapters.RssAdapter;
 import com.multimedios.concertapp.asynctask.DownloadManager;
 import com.multimedios.concertapp.interfaces.DownloadListener;
 import com.multimedios.concertapp.models.*;
-import com.multimedios.concertapp.BuildConfig;
-import com.multimedios.concertapp.R;
+
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,12 +25,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class DownloadActivity extends Activity implements DownloadListener {
-	
+
 	private ProgressBar progressBar;
 	private TextView text;
 	private ListView listView;
-	private List <PerformanceModel> list = new ArrayList<PerformanceModel>();
-	
+	private List <LastfmEventModel> list = new ArrayList<LastfmEventModel>();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,11 +38,10 @@ public class DownloadActivity extends Activity implements DownloadListener {
 		setContentView(R.layout.performance_activity);
 		listView = (ListView) findViewById(R.id.listView3);
 		progressBar = (ProgressBar) findViewById(R.id.legacy_navigation_progressBar);
-		
-		
-		
+
+
 		new DownloadManager(this, 10000, 15000, "GET")
-					.execute(getString(R.string.page_url));
+		.execute(getString(R.string.geo_url));
 	}
 
 	@Override
@@ -54,39 +55,29 @@ public class DownloadActivity extends Activity implements DownloadListener {
 		if(progressBar.getVisibility() == View.VISIBLE){
 			progressBar.setVisibility(View.GONE);
 		}
-		FirstNode model = (FirstNode) parseServiceResponse(data, FirstNode.class);
-		if (model != null && model.resultsPageModel != null) 
+
+		LastfmFirstNode model = (LastfmFirstNode) parseServiceResponse(data, LastfmFirstNode.class);
+
+		if (model != null && model.eventsModel.event != null)
 		{
-			if (model.resultsPageModel.results != null) 
-			{
-				ResultsModel resultModel = model.resultsPageModel.results;
-				if (resultModel != null) 
-				{
-					List<EventModel> eventsList = resultModel.eventList;
-					if (eventsList != null && eventsList.size() > 0) 
-					{
-						for (EventModel event : eventsList) 
-						{
-							List<PerformanceModel> performanceList = event.performanceList;
-							if(performanceList != null && performanceList.size()>0)
-							{
-								for(PerformanceModel performance : performanceList)
-								{
-									performance.billing = performanceList.get(0).billing;
-									performance.billingIndex = performanceList.get(0).billingIndex;
-									performance.displayName = performanceList.get(0).displayName;
-									performance.id = performanceList.get(0).id;
-									list.add(performance);
-								}
-							}
-						}
-					}
+			List<LastfmEventModel> eventsList= model.eventsModel.event;			
+			if (eventsList != null && eventsList.size() > 0)  
+			{ 
+				int i=0;
+				for (LastfmEventModel event : eventsList) 
+				{				
+					event.title = eventsList.get(i).title ;
+					event.artists.headliner = eventsList.get(i).artists.headliner;
+					event.startDate = eventsList.get(i).startDate;
+					event.venue.name = eventsList.get(i).venue.name;
+					list.add(event);
+					i++;
 				}
 			}
 			RssAdapter adapter = new RssAdapter(getApplicationContext(), R.string.app_name, list);
 			listView.setAdapter(adapter);
 		}
-	}	
+	}
 
 	@Override
 	public void onError(String error, int code) {
@@ -94,7 +85,7 @@ public class DownloadActivity extends Activity implements DownloadListener {
 			progressBar.setVisibility(View.GONE);
 		text.setText(error);
 	}	
-	
+
 	/**
 	 * Parses the WebResponse.
 	 * 

@@ -22,7 +22,7 @@
 	    tools:ignore="ContentDescription" >
 	
 	    <TextView
-	    	android:id="@+id/billingIndex"
+	    	android:id="@+id/title"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="10dp"
@@ -30,28 +30,28 @@
 	        android:textSize="16sp" />
 	
 	    <TextView
-	    	android:id="@+id/displayName"
+	    	android:id="@+id/headliner"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="10dp"
 	        android:textColor="@android:color/black"
 	        android:textSize="16sp" />
 	    
-	   	<TextView
-	        android:id="@+id/billing"
+ 	   	<TextView
+	        android:id="@+id/startDate"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="10dp"
 	        android:textSize="14sp" />
     	
 	    <TextView
-	    	android:id="@+id/id"
+	    	android:id="@+id/venueName"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="10dp"
 	        android:textColor="@android:color/black"
 	        android:textSize="16sp" />
-	    
+		 	    
     </LinearLayout>
 
 </RelativeLayout>
