@@ -6,22 +6,33 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
+import com.multimedios.concertapp.conexionapi.DownloadActivity;
+import com.multimedios.concertapp.interfaces.OnDialogAction;
+import com.multimedios.concertapp.factories.MessageFactory;
 
 import android.os.Bundle;
 import android.app.Activity;
-//import android.view.Menu;
-//import android.view.MenuInflater;
 import android.widget.TextView;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.provider.Settings;
+
 
 public class MainActivity extends Activity {
+	
+	private ConnectivityManager connManager;
+	private NetworkInfo netInfo;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		//final Global global = Global.getInstance();
+		connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		
 		final TextView txtBienvenida = (TextView)findViewById(R.id.bienvenida);
 		
@@ -43,13 +54,40 @@ public class MainActivity extends Activity {
 								//Se modifica el texto de bienvenida, con el nombre de usuario
 								txtBienvenida.setText(getString(R.string.mensaje_bienvenida) + " " + user.getName());
 								
-								/*Intent irHomeActivity = new Intent(getApplicationContext(), HomeActivity.class);
-						    	irHomeActivity.putExtra("usuario", user.getName());
-						    	startActivity(irHomeActivity);*/
-								Intent irPagerMainActivity = new Intent(getApplicationContext(), PagerMainActivity.class);
+								//Manejo de conexión
+								if(netInfo != null && netInfo.isConnected()){
+									Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
+									startActivity(intent);
+									finish();
+								} else {
+									AlertDialog dialog = MessageFactory.getAlertDialog(MainActivity.this, new OnDialogAction() {
+										
+															@Override
+															public void onPositiveButtonPressed(DialogInterface dialog) {
+																dialog.dismiss();
+																startActivity(new Intent(Settings.ACTION_SETTINGS));
+															}
+															
+															@Override
+															public void onNegativeButtonPressed(DialogInterface dialog) {
+																dialog.dismiss();
+															}
+															
+															@Override
+															public void onDialogCancel(DialogInterface dialog) {
+																dialog.dismiss();
+															}
+														},  getString(R.string.connectivity_error_title), 
+															getString(R.string.connectivity_error), 
+															getString(R.string.accept_button), 
+															getString(R.string.config_button));
+									
+									if(dialog != null)
+										dialog.show();
+								}
+								/*Intent irPagerMainActivity = new Intent(getApplicationContext(), PagerMainActivity.class);
 						    	startActivity(irPagerMainActivity);
-						    	finish();
-								
+						    	finish();*/
 							}
 							else{
 								txtBienvenida.setText("Sin usuario");
@@ -75,5 +113,11 @@ public class MainActivity extends Activity {
     super.onActivityResult(requestCode, resultCode, data);
        Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
    }
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		netInfo = connManager.getActiveNetworkInfo();
+	}
 	
 }

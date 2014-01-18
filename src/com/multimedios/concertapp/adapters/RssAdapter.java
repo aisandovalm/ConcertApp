@@ -2,17 +2,16 @@ package com.multimedios.concertapp.adapters;
 
 import java.util.List;
 
+
 //import com.fasterxml.jackson.annotation.JsonProperty;
 import com.multimedios.concertapp.R;
 import com.multimedios.concertapp.models.*;
-
-//import cl.telematica.httpjacksonparseexample.R;
-//import cl.telematica.httpjacksonparseexample.models.LastfmEventModel;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -33,9 +32,9 @@ public class RssAdapter extends ArrayAdapter<LastfmEventModel> {
 		ViewHolder holder = null;
 		//TextView id = null;
 		TextView title = null;
-		TextView headliner = null;
 	    TextView startDate = null;
 	    TextView venueName = null;
+	    WebView image = null;
 	    
 		final LastfmEventModel event = (LastfmEventModel) getItem(position);
 		
@@ -49,16 +48,16 @@ public class RssAdapter extends ArrayAdapter<LastfmEventModel> {
 //obtener datos	
 	//	id = holder.getId();
 		title = holder.getTitle();
-		headliner = holder.getHeadliner();
 		startDate = holder.getStartDate();
 		venueName = holder.getVenueName();
+		image = holder.getImage();
 
 //setearlos para mostrar
 	//	id.setText(String.valueOf( model.id ));
 		title.setText(event.title);
-		headliner.setText(event.artists.headliner);
 		startDate.setText(event.startDate );
 		venueName.setText(event.venue.name );
+		image.loadUrl(event.image.get(2).urlImagen);
 		
 		return convertView;
 	}
@@ -71,19 +70,12 @@ public class RssAdapter extends ArrayAdapter<LastfmEventModel> {
 	private class ViewHolder {
 	    private View mRow;
 	    private TextView title;
-	    private TextView headliner;
 	    private TextView startDate;
 	    private TextView venueName;
+	    private WebView image;
 	    
 	    public ViewHolder(View row) {
 	          mRow = row;
-	    }
-	    
-	    public TextView getHeadliner(){
-	    	if(headliner == null){
-	    		headliner = (TextView) mRow.findViewById(R.id.headliner);
-	    	}
-	    	return headliner;
 	    }
 	    
 	    public TextView getTitle(){
@@ -105,6 +97,12 @@ public class RssAdapter extends ArrayAdapter<LastfmEventModel> {
 	    		venueName = (TextView) mRow.findViewById(R.id.venueName);
 	    	}
 	    	return venueName;
+	    }
+	    public WebView getImage(){
+	        if(image == null){
+	        	image = (WebView) mRow.findViewById(R.id.image);                  
+	        }
+	        return image;
 	    }
 	    
 	}

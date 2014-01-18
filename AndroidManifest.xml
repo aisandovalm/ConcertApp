@@ -16,7 +16,7 @@
         android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name="com.multimedios.concertapp.MainActivity"
             android:label="@string/app_name" >
@@ -31,9 +31,10 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />
 
-         <activity android:name="com.facebook.LoginActivity"
-           android:theme="@android:style/Theme.Translucent.NoTitleBar"
-           android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.multimedios.concertapp.HomeActivity"
             android:label="@string/title_activity_home" >
@@ -42,14 +43,24 @@
             android:name="com.multimedios.concertapp.PagerMainActivity"
             android:label="@string/title_activity_pager_main" >
         </activity>
-        <activity
-            android:name="com.multimedios.concertapp.conexionapi.DownloadActivity">
+        <activity android:name="com.multimedios.concertapp.conexionapi.DownloadActivity"
+            android:label="@string/title_activity_pager_main" >
         </activity>
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name="com.multimedios.concertapp.DetailsActivity"
+            android:label="@string/title_activity_details" >
+        </activity>
     </application>
-    <application android:name=".Global"
-       	android:label="@string/app_name"
+    <application
+        android:name="com.multimedios.concertapp.Global"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher">
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
     </application>
+
 </manifest>

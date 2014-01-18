@@ -18,7 +18,7 @@ import com.facebook.Session;
 //import com.facebook.model.GraphUser;
 //import com.facebook.widget.LoginButton;
 
-public class PagerMainActivity extends FragmentActivity {
+public class PagerMainActivity extends FragmentActivity{
 	
 	private FragmentAdapter mAdapter;
 	private ViewPager mPager;

@@ -34,4 +34,7 @@ public class LastfmEventModel {
 	
 	@JsonProperty("image")
 	public List<LastfmImageModel> image;
+	
+	@JsonProperty("website")
+	public String website;
 }
